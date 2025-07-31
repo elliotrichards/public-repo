@@ -2,14 +2,13 @@ import random
 import csv
 import string
 
+'''
+This is a simple hangman game. It started out smaller than this to test logic and flow, and after fix a few bugs I started to add a few extras such as keeping track of the guesses, difficulty level, and a separate
+words file. It's a great way to work and practice with loops and functions. As basic as this game is, I still enjoy playing it from time to time.
+'''
+
 # initialise lives
 lives = 0
-
-# create a small list of words for easier testing
-# words = ['elephant', 'jumper', 'leg']
-
-# pick a random word from words list
-# random_word = random.choice(words)
 
 # set the heart symbol emoji to represent 'lives'
 heart_symbol = u'\u2764'
@@ -18,7 +17,7 @@ heart_symbol = u'\u2764'
 guessed_letters = []
 guessed_word_correctly = False
 
-# use a function to read in a csv file, in this case a words list of nouns
+# use a function to read in a csv file, in this case a list of English nouns in the same directory
 def read_and_randomize_csv(filepath):
     """
     Reads a CSV file into a list and then randomizes the list.
@@ -53,8 +52,6 @@ random_word = random.choice(randomized_nouns)
 # This makes the clue automatically match the length of any random_word chosen, which is more robust.
 clue = ['?'] * len(random_word)
 
-
-
 # create a function to update the guessed word
 def update_clue(guessed_letter, random_word, clue):
     index = 0
@@ -62,7 +59,6 @@ def update_clue(guessed_letter, random_word, clue):
         if guessed_letter == random_word[index]:
             clue[index] = guessed_letter
         index += 1
-        
 
 # Let's create difficulty levels based on lives
 while lives == 0:
@@ -75,9 +71,6 @@ while lives == 0:
         lives = 5
     else:
         print("You need to select a level to continue.")
-
-
-
 
 while lives > 0:
     print(f"\nLives left: {lives} " + heart_symbol * lives)

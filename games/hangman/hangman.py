@@ -15,8 +15,7 @@ lives = 0
 heart_symbol = u'\u2764'
 
 # create a slight pause in the game to make it easier to follow the messages
-pause = 0.100
-time.sleep(pause)
+pause = 0.050
 
 # create an empty list to store the guessed letters
 guessed_letters = []
@@ -104,7 +103,7 @@ while lives > 0:
             update_clue(guess, random_word, clue)
             # print a list of guessed letters
             time.sleep(pause)
-            print(f"Guessed letters: {''.join(guessed_letters)}")
+            print(f"Guessed letters: {', '.join(sorted(list(guessed_letters)))}")
             if ''.join(clue) == random_word:
                 guessed_word_correctly = True
                 print(''.join(clue)) # show the completed word
@@ -116,7 +115,7 @@ while lives > 0:
             print("\nIncorrect, you lose a life.")
             # print a list of guessed letters
             time.sleep(pause)
-            print(f"Guessed letters: {''.join(guessed_letters)}")
+            print(f"Guessed letters: {', '.join(sorted(list(guessed_letters)))}")
             lives -= 1
     else:
         print("\nInvalid guess. Please guess a single letter or the whole word.")
@@ -129,4 +128,3 @@ while lives > 0:
                     
 time.sleep(pause)
 print("\nThanks for playing!")
-

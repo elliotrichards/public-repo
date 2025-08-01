@@ -4,7 +4,7 @@ import time
 
 '''
 This is the AI version of my game. Using Google Gemini I copied my original code and asked it to improve it, and it fed back the following code, tweaking what I had already written and actually
-making the game a little more polished. Nice to see it in action and follow along, but it's not strictly my code! I'm including it here as an example along with my original which I'm still pleased with as a novie Python
+making the game a little more polished. Nice to see it in action and follow along, but it's not strictly my code! I'm including it here as an example along with my original which I'm still pleased with as a novice Python
 learner.
 '''
 
